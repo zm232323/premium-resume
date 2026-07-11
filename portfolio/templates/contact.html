@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<!-- ===========================================
+     HERO SECTION
+============================================ -->
+
+<section class="contact-hero">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8 text-center">
+
+                <span class="section-subtitle"
+                      data-aos="fade-up">
+
+                    GET IN TOUCH
+
+                </span>
+
+                <h1 class="section-title mt-3"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+
+                    Let's Build Something Amazing Together
+
+                </h1>
+
+                <p class="contact-hero-text"
+                   data-aos="fade-up"
+                   data-aos-delay="200">
+
+                    Whether you have an internship opportunity,
+                    freelance project, collaboration idea or simply
+                    want to connect, I'd love to hear from you.
+
+                    Fill out the form below and I'll get back to you
+                    as soon as possible.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================================
+     CONTACT CARDS
+============================================ -->
+
+<section class="contact-info-section">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-4"
+data-aos="fade-up">
+
+<div class="contact-card">
+
+<div class="contact-icon">
+
+<i class="bi bi-envelope-fill"></i>
+
+</div>
+
+<h4>Email</h4>
+
+<p>
+
+zm086220@gmail.com
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4"
+data-aos="fade-up"
+data-aos-delay="150">
+
+<div class="contact-card">
+
+<div class="contact-icon">
+
+<i class="bi bi-telephone-fill"></i>
+
+</div>
+
+<h4>Phone</h4>
+
+<p>
+
++92 308 2883900
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4"
+data-aos="fade-up"
+data-aos-delay="300">
+
+<div class="contact-card">
+
+<div class="contact-icon">
+
+<i class="bi bi-geo-alt-fill"></i>
+
+</div>
+
+<h4>Location</h4>
+
+<p>
+
+Karachi, Pakistan
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================
+     CONTACT FORM
+============================================ -->
+
+<section class="contact-form-section">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-xl-8">
+
+<div class="contact-form-card"
+data-aos="zoom-in">
+
+<div class="text-center mb-5">
+
+<span class="section-subtitle">
+
+CONTACT FORM
+
+</span>
+
+<h2 class="section-title mt-2">
+
+Send Me A Message
+
+</h2>
+
+<p>
+
+I'll respond as soon as possible.
+
+</p>
+
+</div>
+
+{% if messages %}
+
+{% for message in messages %}
+
+<div class="alert alert-success">
+
+{{ message }}
+
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="row">
+
+<div class="col-md-6 mb-4">
+
+<label>Name</label>
+
+{{ form.name }}
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label>Email</label>
+
+{{ form.email }}
+
+</div>
+
+<div class="col-12 mb-4">
+
+<label>Subject</label>
+
+{{ form.subject }}
+
+</div>
+
+<div class="col-12 mb-4">
+
+<label>Message</label>
+
+{{ form.message }}
+
+</div>
+
+<div class="col-12 text-center">
+
+<button
+type="submit"
+class="btn-primary-custom">
+
+<i class="bi bi-send-fill"></i>
+
+Send Message
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

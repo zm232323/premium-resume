@@ -1,0 +1,540 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- ============================================================
+     1. HERO SECTION
+     ============================================================ -->
+<section class="hero-section" id="home">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-7" data-aos="fade-right" data-aos-duration="900">
+        <span class="section-subtitle">
+          <i class="bi bi-stars me-1"></i>Welcome to my portfolio
+        </span>
+        <h1 class="mb-3">
+          Hi, I'm <span style="color: var(--color-accent)">Zaid Malik</span>
+        </h1>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span
+            class="badge rounded-pill px-3 py-2"
+            style="
+              background: rgba(199, 154, 75, 0.12);
+              color: var(--color-accent);
+              font-weight: 600;
+            "
+          >
+            <i class="bi bi-code-slash me-1"></i>Python Developer
+          </span>
+          <span
+            class="badge rounded-pill px-3 py-2"
+            style="
+              background: rgba(199, 154, 75, 0.12);
+              color: var(--color-accent);
+              font-weight: 600;
+            "
+          >
+            <i class="bi bi-diagram-3 me-1"></i>Django Developer
+          </span>
+          <span
+            class="badge rounded-pill px-3 py-2"
+            style="
+              background: rgba(199, 154, 75, 0.12);
+              color: var(--color-accent);
+              font-weight: 600;
+            "
+          >
+            <i class="bi bi-globe2 me-1"></i>Web Developer
+          </span>
+        </div>
+        <p class="fs-5" style="max-width: 560px">
+          I design and build clean, purposeful web applications — from elegant
+          front-end interfaces to robust Django-powered back-ends. I care about
+          thoughtful code, tidy design, and products that genuinely help people.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{% url 'projects' %}" class="btn-primary-custom">
+            <i class="bi bi-briefcase-fill"></i> View Projects
+          </a>
+          <a href="{% url 'contact' %}" class="btn-outline-custom">
+            <i class="bi bi-envelope-fill"></i> Contact Me
+          </a>
+        </div>
+
+        <div class="d-flex gap-4 mt-5">
+          <div>
+            <h3 class="mb-0" style="color: var(--color-accent)">
+              {{ project_count }}+
+            </h3>
+            <small
+              class="text-uppercase"
+              style="color: var(--color-text-faint); letter-spacing: 0.06em"
+              >Projects</small
+            >
+          </div>
+          <div>
+            <h3 class="mb-0" style="color: var(--color-accent)">
+              {{ skill_count }}
+            </h3>
+            <small
+              class="text-uppercase"
+              style="color: var(--color-text-faint); letter-spacing: 0.06em"
+              >Skills</small
+            >
+          </div>
+          <div>
+            <h3 class="mb-0" style="color: var(--color-accent)">100%</h3>
+            <small
+              class="text-uppercase"
+              style="color: var(--color-text-faint); letter-spacing: 0.06em"
+              >Passion</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-lg-5 text-center"
+        data-aos="fade-left"
+        data-aos-duration="900"
+        data-aos-delay="150"
+      >
+        <div class="position-relative d-inline-block float-slow">
+          <div
+            class="glass rounded-circle p-3 d-inline-block"
+            style="border-color: var(--color-border-strong)"
+          >
+            <img
+              src="{% static 'portfolio/images/profile.jpg' %}"
+              alt="Zaid Malik - Profile Photo"
+              class="rounded-circle img-rounded"
+              style="width: 320px; height: 320px; object-fit: cover"
+            />
+          </div>
+          <span
+            class="glass position-absolute d-inline-flex align-items-center gap-2 px-3 py-2"
+            style="bottom: 10px; right: -10px; border-radius: 999px"
+          >
+            <i
+              class="bi bi-patch-check-fill"
+              style="color: var(--color-accent)"
+            ></i>
+            <span class="fw-semibold small">Available for Internships</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. ABOUT ME
+     ============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-subtitle">Get To Know Me</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+
+    <div class="row align-items-start gy-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <p class="fs-5">
+          I’m a BS Data Science student with a strong interest in technology,
+          software development, and solving real-world problems through data and
+          code. My academic journey has helped me build a solid foundation in
+          Python, databases, data analysis, and problem-solving while
+          continuously exploring new technologies to expand my skills.
+        </p>
+        <p>
+          Alongside my studies, I have developed practical experience in
+          Full-Stack Web Development using the MERN Stack and Django. I enjoy
+          building responsive, user-friendly, and scalable web applications,
+          from designing modern front-end interfaces to developing secure
+          back-end systems. I’m always eager to learn, improve my skills, and
+          work on projects that create meaningful impact.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-custom h-100">
+              <i
+                class="bi bi-mortarboard-fill fs-3 mb-2"
+                style="color: var(--color-accent)"
+              ></i>
+              <h6 class="mb-1">Education</h6>
+              <p class="small mb-0">
+                BS Data Science, currently pursuing with a focus on data
+                analytics, machine learning, and programming.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-custom h-100">
+              <i
+                class="bi bi-heart-fill fs-3 mb-2"
+                style="color: var(--color-accent)"
+              ></i>
+              <h6 class="mb-1">Interests</h6>
+              <p class="small mb-0">
+                Data Science, Machine Learning, Artificial Intelligence, data
+                visualization, and building intelligent applications.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="card-custom h-100">
+              <i
+                class="bi bi-lightning-charge-fill fs-3 mb-2"
+                style="color: var(--color-accent)"
+              ></i>
+              <h6 class="mb-1">Strengths</h6>
+              <p class="small mb-0">
+                Analytical thinking, problem-solving, continuous learning, and a
+                passion for working with data.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-custom h-100">
+              <i
+                class="bi bi-flag-fill fs-3 mb-2"
+                style="color: var(--color-accent)"
+              ></i>
+              <h6 class="mb-1">Career Goal</h6>
+              <p class="small mb-0">
+                To become a skilled Data Scientist and develop AI-driven
+                solutions that solve real-world problems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. SKILLS
+     ============================================================ -->
+<section id="skills" style="background: var(--color-bg-alt)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-subtitle">What I Work With</span>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="mx-auto mt-3" style="max-width: 650px">
+        Technologies I use to build modern, responsive and scalable web
+        applications.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      {% for skill in skills %}
+      <div
+        class="col-6 col-md-4 col-lg-3"
+        data-aos="zoom-in"
+        data-aos-delay="{{ forloop.counter0|add:'50' }}"
+      >
+        <div class="skills-card">
+          <div class="skill-icon">
+            <i class="{{ skill.icon }}"></i>
+          </div>
+
+          <h5>{{ skill.name }}</h5>
+
+          <small>{{ skill.description }}</small>
+
+          <div class="progress mt-3">
+            <div
+              class="progress-bar"
+              style="width: {{ skill.percentage }}%;"
+            ></div>
+          </div>
+
+          <span class="skill-percent"> {{ skill.percentage }}% </span>
+        </div>
+      </div>
+      {% empty %}
+
+      <div class="col-12 text-center">
+        <p>No skills added yet.</p>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. EDUCATION TIMELINE
+     ============================================================ -->
+<section id="education">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-subtitle">My Academic Journey</span>
+      <h2 class="section-title">Education Timeline</h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <ul
+          class="list-unstyled ps-0 m-0"
+          style="border-left: 2px solid var(--color-border-strong)"
+        >
+          <li class="ps-4 pb-5 position-relative" data-aos="fade-up">
+            <span
+              class="position-absolute translate-middle-x rounded-circle d-inline-flex align-items-center justify-content-center"
+              style="
+                left: 0;
+                width: 14px;
+                height: 14px;
+                background: var(--color-accent);
+                margin-left: -8px;
+                top: 4px;
+              "
+            ></span>
+            <span
+              class="badge rounded-pill mb-2"
+              style="
+                background: rgba(199, 154, 75, 0.12);
+                color: var(--color-accent);
+              "
+              >2025 — Present</span
+            >
+            <div class="card-custom">
+              <h5 class="mb-1">BS Data Science</h5>
+              <p class="small mb-0">
+                Currently pursuing BS Data Science, focusing on Python, data
+                analytics, machine learning, databases, and building modern web
+                applications.
+              </p>
+            </div>
+          </li>
+
+          <li
+            class="ps-4 pb-5 position-relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <span
+              class="position-absolute translate-middle-x rounded-circle d-inline-flex align-items-center justify-content-center"
+              style="
+                left: 0;
+                width: 14px;
+                height: 14px;
+                background: var(--color-accent);
+                margin-left: -8px;
+                top: 4px;
+              "
+            ></span>
+            <span
+              class="badge rounded-pill mb-2"
+              style="
+                background: rgba(199, 154, 75, 0.12);
+                color: var(--color-accent);
+              "
+              >2023 — 2025</span
+            >
+            <div class="card-custom">
+              <h5 class="mb-1">Intermediate (Computer Science)</h5>
+              <p class="small mb-0">
+                Completed Intermediate in Computer Science, building a strong
+                foundation in programming, mathematics, and computer
+                fundamentals.
+              </p>
+            </div>
+          </li>
+
+          <li
+            class="ps-4 position-relative"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <span
+              class="position-absolute translate-middle-x rounded-circle d-inline-flex align-items-center justify-content-center"
+              style="
+                left: 0;
+                width: 14px;
+                height: 14px;
+                background: var(--color-accent);
+                margin-left: -8px;
+                top: 4px;
+              "
+            ></span>
+            <span
+              class="badge rounded-pill mb-2"
+              style="
+                background: rgba(199, 154, 75, 0.12);
+                color: var(--color-accent);
+              "
+              >2021 — 2023</span
+            >
+            <div class="card-custom">
+              <h5 class="mb-1">Matriculation (Science)</h5>
+              <p class="small mb-0">
+                Completed secondary education with distinction, first introduced
+                to computer fundamentals.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. CAREER GOAL
+     ============================================================ -->
+<section id="career-goal" style="background: var(--color-bg-alt)">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="glass p-5 text-center" data-aos="zoom-in">
+          <i
+            class="bi bi-rocket-takeoff-fill fs-1 mb-3 d-inline-block"
+            style="color: var(--color-accent)"
+          ></i>
+          <span class="section-subtitle d-block mb-2">Looking Ahead</span>
+          <h2 class="section-title mb-3">My Career Goal</h2>
+          <p class="fs-5 mb-0">
+            My goal is to become a skilled Data Scientist who transforms data
+            into meaningful insights and intelligent solutions. I aim to
+            continuously enhance my expertise in data analytics, machine
+            learning, artificial intelligence, and Python while working on
+            real-world projects that create a positive impact and solve complex
+            problems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. ACHIEVEMENTS / STATISTICS
+     ============================================================ -->
+<section id="achievements">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-subtitle">By The Numbers</span>
+      <h2 class="section-title">Achievements &amp; Stats</h2>
+    </div>
+
+    <div class="row g-4 text-center">
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+        <div class="card-custom h-100">
+          <i
+            class="bi bi-kanban-fill fs-2 mb-2"
+            style="color: var(--color-accent)"
+          ></i>
+          <h2 class="mb-0" style="color: var(--color-text)">
+            {{ project_count }}+
+          </h2>
+          <p class="small mb-0 text-uppercase" style="letter-spacing: 0.06em">
+            Projects
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-custom h-100">
+          <i
+            class="bi bi-tools fs-2 mb-2"
+            style="color: var(--color-accent)"
+          ></i>
+          <h2 class="mb-0" style="color: var(--color-text)">
+            {{ skill_count }}
+          </h2>
+          <p class="small mb-0 text-uppercase" style="letter-spacing: 0.06em">
+            Skills
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-custom h-100">
+          <i
+            class="bi bi-emoji-smile-fill fs-2 mb-2"
+            style="color: var(--color-accent)"
+          ></i>
+          <h2 class="mb-0" style="color: var(--color-text)">100%</h2>
+          <p class="small mb-0 text-uppercase" style="letter-spacing: 0.06em">
+            Learning Passion
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-custom h-100">
+          <i
+            class="bi bi-lightning-charge-fill fs-2 mb-2"
+            style="color: var(--color-accent)"
+          ></i>
+          <h2 class="mb-0" style="color: var(--color-text)">A+</h2>
+          <p class="small mb-0 text-uppercase" style="letter-spacing: 0.06em">
+            Fast Learner
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. CALL TO ACTION
+     ============================================================ -->
+<section id="cta">
+  <div class="container">
+    <div
+      class="glass p-5 text-center position-relative overflow-hidden"
+      style="
+        background: linear-gradient(
+          135deg,
+          rgba(199, 154, 75, 0.12),
+          rgba(27, 35, 64, 0.4)
+        );
+      "
+      data-aos="fade-up"
+    >
+      <i
+        class="bi bi-chat-square-heart-fill fs-1 mb-3 d-inline-block"
+        style="color: var(--color-accent)"
+      ></i>
+      <h2 class="section-title d-block mx-auto" style="margin-bottom: 1rem">
+        Let's Build Something Great Together
+      </h2>
+      <p class="fs-5 mb-4" style="max-width: 620px; margin: 0 auto">
+        Have a project in mind, an internship opportunity, or just want to say
+        hello? I'd love to hear from you.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="{% url 'projects' %}" class="btn-primary-custom">
+          <i class="bi bi-collection-fill"></i> View Projects
+        </a>
+
+        <a href="{% url 'contact' %}" class="btn-outline-custom">
+          <i class="bi bi-send-fill"></i> Contact Me
+        </a>
+
+        {% if resume %}
+        <a
+          href="{{ resume.resume_file.url }}"
+          target="_blank"
+          class="btn-primary-custom"
+        >
+          <i class="bi bi-eye-fill"></i> View Resume
+        </a>
+
+        <a
+          href="{{ resume.resume_file.url }}"
+          download
+          class="btn-outline-custom"
+        >
+          <i class="bi bi-download"></i> Download Resume
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
