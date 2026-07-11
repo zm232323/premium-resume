@@ -34,35 +34,25 @@ Showcase Projects • Download Resume • Contact Form • Dynamic Skills
 
 ## 🏠 Home Page
 
-> Replace with your screenshot
-
-```
-\![Home](screenshots/home.png)
-```
+![Home Page](screenshots/home.png)
 
 ---
 
 ## 💼 Projects Page
 
-```
-screenshots/projects.png
-```
+![Projects Page](screenshots/projects.png)
 
 ---
 
-## 📄 Project Detail
+## 📄 Project Detail Page
 
-```
-screenshots/project-detail.png
-```
+![Project Detail](screenshots/project-detail.png)
 
 ---
 
-## ⚙ Django Admin Dashboard
+## ⚙️ Django Admin Dashboard
 
-```
-screenshots/admin-dashboard.png
-```
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ---
 
